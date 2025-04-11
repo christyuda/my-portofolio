@@ -2,17 +2,17 @@
   "name": "my-portofolio",
   "version": "0.1.0",
   "private": true,
-
   "scripts": {
     "dev": "next dev -p 4000",
-  "start": "next start -p 4000",
-    "build": "next build --no-lint && next export",
+    "start": "next start -p 4000",
+    "build": "next build --no-lint",
     "deploy": "gh-pages -d out",
     "lint": "next lint"
   },
   "dependencies": {
     "@react-three/drei": "^9.122.0",
     "@sentry/nextjs": "^9.2.0",
+    "analyze": "^0.0.14",
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.7",
     "mini-svg-data-uri": "^1.4.4",

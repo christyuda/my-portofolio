@@ -1,10 +1,14 @@
 "use client";
-
 import { navItems } from "@/data";
-import { FloatingNav } from "@/components/ui/FlotaingNav";
-import Hero from "@/components/Hero";
-import Grid from "@/components/Grid";
-import { CardHoverEffectDemo } from "@/components/CardHoverEffectDemo";
+import dynamic from "next/dynamic";
+
+const FloatingNav = dynamic(() => import("@/components/ui/FlotaingNav").then(mod => mod.FloatingNav), {
+  ssr: false,
+});
+const Hero = dynamic(() => import("@/components/Hero"), { ssr: false });
+const Grid = dynamic(() => import("@/components/Grid"), { ssr: false });
+const CardHoverEffectDemo = dynamic(() => import("@/components/CardHoverEffectDemo").then(mod => mod.CardHoverEffectDemo), { ssr: false });
+
 
 const Home = () => {
   return (
