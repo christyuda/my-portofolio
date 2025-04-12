@@ -1,5 +1,5 @@
 export const navItems = [
-      { name: "About", link: "#about" },
+    { name: "About", link: "#about" },
     { name: "Projects", link: "#projects" },
     { name: "Testimonials", link: "#testimonials" },
     { name: "Contact", link: "#contact" },
@@ -10,10 +10,10 @@ export const navItems = [
       id: 1,
       title: "I turn ideas into meaningful interfaces, with strong communication & collaboration.",
       description: "Design. Build. Communicate. Deliver.",
-      className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
-      imgClassName: "w-full h-full",
+      className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] ",
+      imgClassName: "w-full h-120", // Gambar ukuran tetap
       titleClassName: "justify-end",
-      img: "/b1.svg",
+      img: "/mee.png",
       spareImg: "",
     },
     {

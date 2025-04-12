@@ -90,13 +90,17 @@ export const BentoGridItem = ({
       {/* add img divs */}
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
-          {img && (
-            <img
-              src={img}
-              alt={img}
-              className={cn(imgClassName, "object-cover object-center ")}
-            />
-          )}
+        {img && (
+  <div className="relative w-full h-full">
+    <img
+      src={img}
+      alt={img}
+      className={cn(imgClassName, "object-contain object-center")}
+    />
+    <div className="absolute inset-0 bg-black/40   rounded-3xl" />
+  </div>
+)}
+
         </div>
         <div
           className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-90"
