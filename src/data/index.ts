@@ -1,7 +1,8 @@
 export const navItems = [
     { name: "About", link: "#about" },
+    { name: "Services", link: "#services" },
     { name: "Projects", link: "#projects" },
-    { name: "Testimonials", link: "#testimonials" },
+    { name: "Timeline", link: "#timeline" },
     { name: "Contact", link: "#contact" },
   ];
 
@@ -18,12 +19,12 @@ export const navItems = [
     },
     {
       id: 2,
-      title: "flexible in the way I work",
+      title: "",
       description: "",
       className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-      imgClassName: "",
+      imgClassName: "w-full h-full object-cover object-[center_2%]",
       titleClassName: "justify-start",
-      img: "",
+      img: "/assets/images/my-photo.png",
       spareImg: "",
     },
     {
@@ -60,13 +61,136 @@ export const navItems = [
     },
   ];
 
+export const caseStudies = [
+  {
+    title: "TheTecut Barbershop",
+    problem:
+      "Barbershop needed a digital presence to show services, pricing, and booking flow in one clear experience.",
+    role: "Fullstack Engineer",
+    solution:
+      "Built and delivered a barbershop website focused on service discovery, clean UI, and responsive access across devices.",
+    impact: [
+      "Improved online visibility for services and brand.",
+      "Made customer information access faster and clearer.",
+      "Created a stronger digital touchpoint for new visitors.",
+    ],
+    stack: ["Next.js", "Tailwind CSS", "Frontend"],
+    link: "#",
+  },
+  {
+    title: "Yogyakomtek Landing Pages",
+    problem:
+      "Campaign pages needed to communicate event and promotion information quickly with a modern and lightweight page structure.",
+    role: "Frontend Engineer",
+    solution:
+      "Designed and developed landing pages with clear section flow, strong visual hierarchy, and performance-focused frontend delivery.",
+    impact: [
+      "Faster campaign publishing and iteration.",
+      "Better readability of promo and event information.",
+      "Improved user experience on desktop and mobile.",
+    ],
+    stack: ["Next.js", "Tailwind CSS", "Landing Page"],
+    link: "#",
+  },
+  {
+    title: "Pospay Agen (Mobile App)",
+    problem:
+      "Agents needed a mobile workflow for service operations with map support and delivery tracking.",
+    role: "Mobile Engineer",
+    solution:
+      "Developed Flutter app integrated with HERE Maps and tracking features tailored for field usage.",
+    impact: [
+      "Field process became easier to run from mobile.",
+      "Better visibility for delivery and route activity.",
+      "Improved day-to-day operational speed for agents.",
+    ],
+    stack: ["Flutter", "HERE Maps", "Mobile UI"],
+    link: "https://github.com/christianyuda/pospay-agen",
+  },
+  {
+    title: "MyTelkomsel PosAja Kurir (Frontend)",
+    problem:
+      "Courier flow in-app required a focused frontend experience for faster task handling and clearer shipment interaction.",
+    role: "Frontend Engineer",
+    solution:
+      "Implemented courier-facing frontend modules with reusable UI components and responsive interaction patterns.",
+    impact: [
+      "Simplified courier task navigation in app workflow.",
+      "Improved consistency across courier-facing screens.",
+      "Faster frontend delivery through reusable components.",
+    ],
+    stack: ["Flutter", "Frontend", "Mobile UI"],
+    link: "#",
+  },
+];
+
+export const nowHighlights = [
+  {
+    title: "Building",
+    description:
+      "Production-ready web and mobile features with focus on performance, clean UX, and maintainable architecture.",
+  },
+  {
+    title: "Learning",
+    description:
+      "Deeper system design for scalable backend services, container workflows, and observability practices.",
+  },
+  {
+    title: "Open For",
+    description:
+      "Freelance and full-time roles in Software Engineering, especially product-focused teams with fast iteration.",
+  },
+];
+
+export const timelineEvents = [
+  {
+    period: "2024 - Present",
+    title: "Software Engineer",
+    subtitle: "Web and mobile product delivery",
+    detail:
+      "Built and shipped apps using Flutter, Next.js, and Node.js with collaboration across product and ops teams.",
+  },
+  {
+    period: "2023 - 2024",
+    title: "DevOps and Fullstack Projects",
+    subtitle: "Deployment, integration, and platform work",
+    detail:
+      "Handled Dockerization, server setup, and API integration while delivering internal and public-facing systems.",
+  },
+  {
+    period: "2022 - 2023",
+    title: "Project and Capstone Development",
+    subtitle: "Hands-on learning through real products",
+    detail:
+      "Delivered multiple university and independent projects, from frontend systems to end-to-end mobile apps.",
+  },
+];
+
 
   export const projects = [
+  {
+    title: "TheTecut Barbershop",
+    description:
+      "A barbershop website focused on clean service presentation, responsive layout, and clear booking flow for customers.",
+    link: "#",
+  },
+  {
+    title: "Yogyakomtek Landing Pages",
+    description:
+      "A set of campaign landing pages designed for faster publishing and clear event information with responsive web experience.",
+    link: "https://yogyakomtek.net/",
+  },
   {
     title: "Pospay Agen (Mobile App)",
     description:
       "A Flutter-based mobile app for agent services with integrated HERE Maps and delivery tracking.",
     link: "https://github.com/christianyuda/pospay-agen", // ganti kalau punya link live atau repo
+  },
+  {
+    title: "MyTelkomsel PosAja Kurir (Frontend)",
+    description:
+      "Frontend implementation for courier workflow, built to improve task flow clarity and consistency across courier-facing screens.",
+    link: "#",
   },
   
   

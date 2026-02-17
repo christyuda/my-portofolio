@@ -11,6 +11,7 @@ export const HoverEffect = ({
     title: string;
     description: string;
     link: string;
+    category?: string;
   }[];
   className?: string;
 }) => {
@@ -24,17 +25,16 @@ export const HoverEffect = ({
       )}
     >
       {items.map((item, idx) => (
-        <Link
-          href={item?.link}
-          key={item?.link}
-          className="relative group  block p-2 h-full w-full"
+        <div
+          key={`${item.title}-${item.link}-${idx}`}
+          className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                className="absolute inset-0 h-full w-full bg-indigo-100/70 dark:bg-slate-800/[0.8] block rounded-3xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -48,11 +48,36 @@ export const HoverEffect = ({
               />
             )}
           </AnimatePresence>
-          <Card>
-            <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
-          </Card>
-        </Link>
+          {item.link && item.link !== "#" ? (
+            <Link href={item.link} className="block h-full w-full">
+              <Card>
+                <div className="flex items-center justify-between gap-2">
+                  {item.category && (
+                    <span className="text-[11px] px-2 py-1 rounded-full border border-indigo-400/40 dark:border-cyan-300/30 text-indigo-700 dark:text-cyan-200 bg-indigo-500/10">
+                      {item.category}
+                    </span>
+                  )}
+                  <span className="text-[11px] text-indigo-700 dark:text-cyan-300">Public Link</span>
+                </div>
+                <CardTitle>{item.title}</CardTitle>
+                <CardDescription>{item.description}</CardDescription>
+              </Card>
+            </Link>
+          ) : (
+            <Card>
+              <div className="flex items-center justify-between gap-2">
+                {item.category && (
+                  <span className="text-[11px] px-2 py-1 rounded-full border border-indigo-400/40 dark:border-cyan-300/30 text-indigo-700 dark:text-cyan-200 bg-indigo-500/10">
+                    {item.category}
+                  </span>
+                )}
+                <span className="text-[11px] text-slate-500 dark:text-slate-400">Private Link</span>
+              </div>
+              <CardTitle>{item.title}</CardTitle>
+              <CardDescription>{item.description}</CardDescription>
+            </Card>
+          )}
+        </div>
       ))}
     </div>
   );
@@ -68,7 +93,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-full w-full p-4 overflow-hidden bg-white/85 dark:bg-black border border-slate-200 dark:border-white/[0.2] group-hover:border-indigo-400/40 dark:group-hover:border-slate-700 relative z-20",
         className
       )}
     >
@@ -86,7 +111,7 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
+    <h4 className={cn("text-slate-900 dark:text-zinc-100 font-bold tracking-wide mt-4", className)}>
       {children}
     </h4>
   );
@@ -101,7 +126,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        "mt-8 text-slate-600 dark:text-zinc-400 tracking-wide leading-relaxed text-sm",
         className
       )}
     >
